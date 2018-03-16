@@ -17,6 +17,15 @@ public class Empleados {
         this.nombre = nombre;
         this.Sueldo = Sueldo;
     }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getSueldo() {
+        return Sueldo;
+    }
+    
     
     
     

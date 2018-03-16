@@ -19,5 +19,13 @@ public class Operario extends Empleados {
         this.regalias = regalias;
     }
 
+    public int getHoraExtra() {
+        return horaExtra;
+    }
+
+    public boolean isRegalias() {
+        return regalias;
+    }
+
  
 }

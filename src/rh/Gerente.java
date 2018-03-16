@@ -19,6 +19,7 @@ public class Gerente extends Empleados{
         this.vacacionesPagadas = vacacionesPagadas;
     }
 
+  
    
 
     
