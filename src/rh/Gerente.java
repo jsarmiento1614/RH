@@ -19,6 +19,16 @@ public class Gerente extends Empleados{
         this.vacacionesPagadas = vacacionesPagadas;
     }
 
+    public boolean isTienecarro() {
+        return tienecarro;
+    }
+
+    public boolean isVacacionesPagadas() {
+        return vacacionesPagadas;
+    }
+    
+    
+
   
    
 
