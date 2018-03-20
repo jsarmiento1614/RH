@@ -22,7 +22,7 @@ public class RH {
         // TODO code application logic here
         int cantEmp = 0;
         String nEmpleado = "";
-        String sEmpleado = "";
+        int sEmpleado = 0;
         String tEmpleado = "";
         String ePCarro;
         String ePVacaciones;
@@ -31,8 +31,8 @@ public class RH {
         int contador = 0;
         Empleados[] emp = null;
         Scanner teclado = new Scanner(System.in);
-        System.out.println("********************************************************************************************"); 
-        System.out.println("*                                   EMPLEADOS JSARMIENTO©                                  *");    
+        System.out.println("********************************************************************************************");
+        System.out.println("*                                   EMPLEADOS JSARMIENTO©                                  *");
         System.out.println("*******************************                             ********************************");
         try {
             System.out.println("¿Cuantos Empleados va a ingresar?");
@@ -41,14 +41,25 @@ public class RH {
             emp = new Empleados[cantEmp];
             int salir = 0;
             teclado.nextLine();
+            boolean wenttocatch = false;
             do {
                 System.out.println();
                 System.out.println("Ingrese Nombre del empleado");
                 System.out.print(" ");
                 nEmpleado = teclado.nextLine();
-                System.out.println("Ingrese el Sueldo que recibe el empleado");
-                System.out.print(" ");
-                sEmpleado = teclado.nextLine();
+                do {
+                    System.out.println("Ingrese el Sueldo que recibe el empleado");
+                    if (teclado.hasNextInt()) {
+                        sEmpleado = teclado.nextInt();
+                        wenttocatch = true;
+                    } else {
+                        teclado.nextLine();
+                        System.out.print(" ");
+                        System.out.println("Ingreso un valor incorrecto         >Solo # Enteros");
+                    }
+                    
+                } while (!wenttocatch);
+                teclado.nextLine();//formatear el int
                 System.out.println("Es Gerente (G) || Operario (O)");
                 System.out.print(" ");
                 tEmpleado = teclado.nextLine();
@@ -160,7 +171,7 @@ public class RH {
         for (int i = 0; i < emp.length; i++) {
             if (emp[i] instanceof Gerente) {
                 Gerente ger = (Gerente) emp[i];
-                salarioGerente = salarioGerente + Integer.parseInt(emp[i].getSueldo());
+                salarioGerente = salarioGerente + emp[i].getSueldo();
                 System.out.println("Nombre: " + emp[i].getNombre() + "\nSueldo: " + emp[i].getSueldo());
                 System.out.println("Posee Carro: " + ger.isTienecarro() + "\nVacaciones Pagadas " + ger.isVacacionesPagadas());
                 System.out.println("________________");
@@ -168,7 +179,7 @@ public class RH {
             if (emp[i] instanceof Operario) {
                 //Operario
                 Operario ope = (Operario) emp[i];
-                salarioOperario = salarioOperario + Integer.parseInt(emp[i].getSueldo());
+                salarioOperario = salarioOperario + emp[i].getSueldo();
                 System.out.println("Nombre: " + emp[i].getNombre() + "\nSueldo: " + emp[i].getSueldo());
                 System.out.println("Horas Extra " + ope.getHoraExtra() + "\nTiene Regalias " + ope.isRegalias());
                 System.out.println("________________");

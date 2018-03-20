@@ -13,7 +13,7 @@ public class Operario extends Empleados {
     private int horaExtra;
     private boolean regalias;
 
-    public Operario(int horaExtra, boolean regalias, String nombre, String Sueldo) {
+    public Operario(int horaExtra, boolean regalias, String nombre, int Sueldo) {
         super(nombre, Sueldo);
         this.horaExtra = horaExtra;
         this.regalias = regalias;

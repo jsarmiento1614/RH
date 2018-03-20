@@ -11,9 +11,9 @@ package rh;
  */
 public class Empleados {
     private String nombre;
-    private String Sueldo;
+    private int Sueldo;
 
-    public Empleados(String nombre, String Sueldo) {
+    public Empleados(String nombre, int Sueldo) {
         this.nombre = nombre;
         this.Sueldo = Sueldo;
     }
@@ -22,7 +22,7 @@ public class Empleados {
         return nombre;
     }
 
-    public String getSueldo() {
+    public int getSueldo() {
         return Sueldo;
     }
     

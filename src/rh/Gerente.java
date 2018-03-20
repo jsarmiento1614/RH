@@ -13,7 +13,7 @@ public class Gerente extends Empleados{
     private boolean tienecarro;
     private boolean vacacionesPagadas;
 
-    public Gerente(boolean tienecarro, boolean vacacionesPagadas, String nombre, String Sueldo) {
+    public Gerente(boolean tienecarro, boolean vacacionesPagadas, String nombre, int Sueldo) {
         super(nombre, Sueldo);
         this.tienecarro = tienecarro;
         this.vacacionesPagadas = vacacionesPagadas;
